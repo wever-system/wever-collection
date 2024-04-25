@@ -9,7 +9,7 @@ import {
   GridTitlebar,
 } from "../utils/BoxStyles";
 
-const DailyScrumble = () => {
+const Place = () => {
   return (
     <>
       <GridContainer>
@@ -22,10 +22,10 @@ const DailyScrumble = () => {
         <GridSidebar>
           <CollectionList />
         </GridSidebar>
-        <GridContent>DailyScrumble</GridContent>
+        <GridContent>Place</GridContent>
       </GridContainer>
     </>
   );
 };
 
-export default DailyScrumble;
+export default Place;

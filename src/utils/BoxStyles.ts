@@ -10,9 +10,7 @@ export const GridContainer = styled.div`
     "sidebar content";
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px) saturate(180%);
+  background-color: #f0f0f0;
 `;
 
 export const GridTitlebar = styled.div`
@@ -22,7 +20,6 @@ export const GridTitlebar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
 `;
 
 export const GridHeader = styled.div`
@@ -30,14 +27,12 @@ export const GridHeader = styled.div`
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdropfilter: blur(10px);
 `;
 
 export const GridSidebar = styled.div`
   grid-area: sidebar;
   box-sizing: border-box;
-  padding: 10px;
+  padding-left: 10px;
 `;
 
 export const GridContent = styled.div`

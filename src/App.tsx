@@ -1,6 +1,9 @@
 import { BrowserRouter, useRoutes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import DailyScrumble from "./pages/DailyScrumble";
+import Place from "./pages/Place";
+import BookMark from "./pages/BookMark";
 
 const routes = [
   {
@@ -8,8 +11,20 @@ const routes = [
     element: <Home />,
   },
   {
+    path: "/dailyscrumble",
+    element: <DailyScrumble />,
+  },
+  {
+    path: "/place",
+    element: <Place />,
+  },
+  {
+    path: "/bookmark",
+    element: <BookMark />,
+  },
+  {
     path: "*",
-    element: <h1>Not Found</h1>,
+    element: <Home />,
   },
 ];
 
