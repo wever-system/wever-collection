@@ -1,4 +1,6 @@
 import SearchBar from "../components/common/SearchBar";
+import Profile from "../components/header/Profile";
+import CollectionList from "../components/sidebar/CollectionList";
 import {
   GridContainer,
   GridContent,
@@ -14,9 +16,13 @@ const Home = () => {
         <GridTitlebar>
           <SearchBar />
         </GridTitlebar>
-        <GridHeader>Header</GridHeader>
-        <GridSidebar>Sidebar</GridSidebar>
-        <GridContent>Content</GridContent>
+        <GridHeader>
+          <Profile />
+        </GridHeader>
+        <GridSidebar>
+          <CollectionList />
+        </GridSidebar>
+        <GridContent>Home sweet home</GridContent>
       </GridContainer>
     </>
   );
