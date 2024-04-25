@@ -21,7 +21,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1600,
     height: 900,
-    frame: false,
+    titleBarStyle: "hiddenInset",
     icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
     webPreferences: {
       nodeIntegration: true,
@@ -66,7 +66,6 @@ ipcMain.on("maximizeApp", () => {
 });
 
 ipcMain.on("closeApp", () => {
-  console.log("closeApp");
   win?.close();
 });
 

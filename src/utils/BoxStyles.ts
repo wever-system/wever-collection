@@ -10,42 +10,38 @@ export const GridContainer = styled.div`
     "sidebar content";
   width: 100vw;
   height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px) saturate(180%);
 `;
 
 export const GridTitlebar = styled.div`
   -webkit-app-region: drag;
   grid-area: titlebar;
-  background: rgb(255, 248, 231);
-  background: radial-gradient(
-    circle,
-    rgba(255, 248, 231, 1) 0%,
-    rgba(255, 234, 129, 1) 48%,
-    rgba(148, 187, 233, 1) 100%
-  );
   box-sizing: border-box;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding-left: 10px;
 `;
 
 export const GridHeader = styled.div`
   grid-area: header;
-  background-color: #f5f5f5;
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdropfilter: blur(10px);
 `;
 
 export const GridSidebar = styled.div`
   grid-area: sidebar;
-  background-color: #f1f1f1;
   box-sizing: border-box;
   padding: 10px;
 `;
 
 export const GridContent = styled.div`
   grid-area: content;
-  background-color: #ddd;
   padding: 10px;
   box-sizing: border-box;
 `;
