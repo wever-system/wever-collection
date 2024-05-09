@@ -1,6 +1,7 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import sqlExecute from "./db/sqlExecute";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -68,7 +69,17 @@ ipcMain.on("maximizeApp", () => {
 ipcMain.on("closeApp", () => {
   win?.close();
 });
+//######################
 
+ipcMain.on("get-user-name", async (event, ...args) => {
+  const result = await sqlExecute(
+    "SELECT * FROM user WHERE email = ?",
+    args[0]
+  );
+  const data = result.data.pop().name;
+  event.reply("get-user-name-reply", data);
+});
+//######################
 app.on("activate", () => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.

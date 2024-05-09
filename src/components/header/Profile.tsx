@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import profileSvg from "../../assets/profile.svg";
+import { useEffect, useState } from "react";
+import { ipcRenderer } from "electron";
 
 const ProfileBox = styled.div`
   display: flex;
@@ -24,11 +26,19 @@ const ProfileTxt = styled.p`
 `;
 
 const Profile = () => {
-  const userId = "User";
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    ipcRenderer.on("get-user-name-reply", (_, arg) => {
+      setUserName(arg);
+    });
+
+    ipcRenderer.send("get-user-name", "test@test.com");
+  }, []);
   return (
     <ProfileBox>
       <ProfileImage src={profileSvg} alt="profile" />
-      <ProfileTxt>Hello, {userId}</ProfileTxt>
+      <ProfileTxt>Hello, {userName}</ProfileTxt>
     </ProfileBox>
   );
 };
